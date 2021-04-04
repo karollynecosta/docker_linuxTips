@@ -1,7 +1,7 @@
 # Curso Descomplicando Docker - LinuxTips
 
 ## Comandos básicos:
-´´´
+```
 ADD => Copia novos arquivos, diretórios, arquivos TAR ou arquivos remotos e os adicionam ao filesystem do container;
 
 CMD => Executa um comando, diferente do RUN que executa o comando no momento em que está "buildando" a imagem, o CMD executa no início da execução do container;
@@ -27,4 +27,4 @@ USER => Determina qual o usuário será utilizado na imagem. Por default é o ro
 VOLUME => Permite a criação de um ponto de montagem no container;
 
 WORKDIR => Responsável por mudar do diretório / (raiz) para o especificado nele;
-´´´
+```
