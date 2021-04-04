@@ -28,6 +28,6 @@ VOLUME /var/www/html/
 # porta para expor
 EXPOSE 80
 
-# principal processo do container
+# principal processo do container, modo exec
 ENTRYPOINT ["/usr/sbin/apache"]
 CMD ["-D", "FOREGROUND"]
