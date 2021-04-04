@@ -1,6 +1,6 @@
 FROM debian
 
-RUN apt update && apt install -y apache
+RUN apt update && apt install -y apache curl
 #OPCIONAL: dar permissao para  o usuario
 #RUN chown deploy:deploy /var/lock && chown deploy:deploy /var/run && chown deploy:deploy /var/log
 # variaveis de ambiente obrigatorias para o servico apache - descrito no dockerhub
@@ -12,7 +12,9 @@ ENV APACHE_LOG_DIR="/var/log/apache2"
 
 # COPIAR O INDEX e colocar no html
 COPY index.html /var/www/html/
-
+# healthcheck
+HEALTHCHECK --interval=10m --timeout=3s \
+ CMD curl-f http://localhost/ ||exit 1
 LABEL description="Webserver"
 LABEL version="1.0"
 
