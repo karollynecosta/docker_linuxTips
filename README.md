@@ -1,6 +1,6 @@
 # Curso Descomplicando Docker - LinuxTips
 
-## Comandos básicos:
+## Legenda Dockerfile:
 ```
 ADD => Copia novos arquivos, diretórios, arquivos TAR ou arquivos remotos e os adicionam ao filesystem do container;
 
