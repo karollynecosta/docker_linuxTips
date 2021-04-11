@@ -1,0 +1,24 @@
+version: "3.9" # 2 espacos sempre
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+    - db_data:/var/lib/mysql # caminho onde sera montado no container
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: somewordpress
+      MYSQL_USER: somewordpress
+      MYSQL_PASSWORD: somewordpress
+  
+  wordpress:
+    depends_on: # para subir, depende do...
+    - db
+    image: wordpress:latest
+    ports:
+    - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306 # servico:porta
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+  db_data:
